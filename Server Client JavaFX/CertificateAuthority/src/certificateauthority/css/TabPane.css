@@ -1,0 +1,71 @@
+.tab-pane {
+     -fx-tab-min-height: 11.5em;
+    /* 24 */
+    -fx-tab-max-height: 11.5em;
+    /* 24 */
+
+    -fx-tab-min-width: 3em;
+    -fx-tab-max-width: 3em;
+    
+}
+
+.tab-pane:left *.tab-header-area
+{
+    -fx-background-insets: 0;
+}
+
+
+.tab{
+    -fx-background-color: #0a59aa;
+}
+
+.tab:focused
+{
+  -fx-focus-color: #0a59aa;
+}
+
+
+#log{
+    -fx-text-fill: #ffffff;
+}
+
+#log:selected{
+    -fx-text-fill: #f28f84;
+}
+
+#log:hover{
+ -fx-text-fill: #000000;
+}
+
+#patentsData{
+    -fx-text-fill: #ffffff;
+}
+
+#patentsData:selected{
+    -fx-text-fill: #f28f84;
+}
+
+#patentsData:hover{
+ -fx-text-fill: #000000;
+}
+
+.tab-pane *.tab-header-background
+{
+    -fx-background-color: #0a59aa;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: black;
+}
+
+.tab-pane:left *.tab-header-area
+{
+    -fx-background-insets: 0 0 0 0; 
+}
+
+.tab:selected .focus-indicator
+{
+    -fx-border-color: transparent;
+}
+
+
+
+

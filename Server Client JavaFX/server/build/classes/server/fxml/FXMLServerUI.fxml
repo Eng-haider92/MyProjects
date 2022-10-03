@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="vbox" layoutX="10.0" layoutY="10.0" prefHeight="423.0" prefWidth="554.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.ServerThread">
+     <style>
+	-fx-padding: 10;
+	-fx-border-style: solid inside;
+	-fx-border-width: 2;
+	-fx-border-insets: 5;
+	-fx-border-radius: 5;
+	-fx-border-color: blue;
+     </style>
+   <children>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="Id" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="firstName" prefWidth="75.0" text="first name" />
+          <TableColumn fx:id="lastName" prefWidth="75.0" text="last name" />
+          <TableColumn fx:id="temperature" prefWidth="75.0" text="temperature" />
+          <TableColumn fx:id="pressure" prefWidth="75.0" text="pressure" />
+          <TableColumn fx:id="status" prefWidth="75.0" text="status" />
+          
+        </columns>
+      </TableView>
+       <VBox layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="250.0" prefWidth="400.0" spacing="10">
+        <style>
+	-fx-padding: 10;
+	-fx-border-style: solid inside;
+	-fx-border-width: 2;
+	-fx-border-insets: 5;
+	-fx-border-radius: 5;
+	-fx-border-color: blue;
+       </style>
+        <children>
+              <Label text="Connection Status:" textFill="#0a0a79">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="info" layoutX="27.0" layoutY="27.0" />
+
+       <Label fx:id="connectionStatus" />
+        </children>
+       </VBox>
+            
+   </children>
+</VBox>

@@ -1,0 +1,23 @@
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #0a59aa;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #ffffff;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: #000000;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.button:hover {
+    -fx-background-color: #0a59aa;
+    -fx-text-fill: #ffffff;
+	-fx-border-color: #000000;
+}
+
+.button:disabled {
+    -fx-opacity: 1;
+    -fx-background-color: grey;
+    -fx-text-fill: black;
+}

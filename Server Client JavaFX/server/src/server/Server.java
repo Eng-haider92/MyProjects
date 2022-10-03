@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package server;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+/**
+ *
+ * @author haider-Rajab
+ */
+public class Server extends Application {
+    
+    @FXML
+    private TextField portNumber;       
+        
+    @FXML
+    private TextField symmetricKey;
+        
+    @FXML
+    private URL location;
+	
+    @FXML
+    private ResourceBundle resources;
+        
+        
+        
+    @FXML
+    private Button start;
+       
+    static private String port;
+    static private String key;
+
+    static private ServerThread msgController;
+        
+    @Override
+    public void start(Stage stage) throws IOException {
+        
+        Parent root = FXMLLoader .load(getClass().getResource("fxml/FXMLRoot.fxml"));
+       
+        
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.setTitle("symmetric server");
+        stage.setHeight(540);
+        stage.setWidth(800);
+        stage.show();
+    }
+
+  
+    static public String getPortNumber() {
+            return Server.port;
+        }
+        
+    static public String getSymmetricKey() {
+            return Server.key;
+        }
+    
+    static public ServerThread getMsgController(){
+        return Server.msgController;
+    }
+	
+    @FXML
+    public void startServer() throws IOException 
+	{
+            
+            Server.port = portNumber.getText();
+            Server.key = symmetricKey.getText();
+            //close pervious Stage
+            Stage primaryStage = (Stage) start.getScene().getWindow();
+            primaryStage.close();
+            
+            //create new Stage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/FXMLServerUI.fxml"));
+            Parent root = loader.load();
+            
+            msgController = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("symmetric server");
+            stage.setHeight(540);
+            stage.setWidth(800);
+            stage.show();
+	}
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+}

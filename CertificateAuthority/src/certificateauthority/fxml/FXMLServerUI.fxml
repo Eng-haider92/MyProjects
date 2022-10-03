@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane prefHeight="594.0" prefWidth="784.0" side="LEFT" stylesheets="@../css/TabPane.css"
+         xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="certificateauthority.CertificateServer">
+   <tabs>
+      <Tab fx:id="connectionStatus" closable="false">
+         <content>
+            <AnchorPane style="-fx-background-color: white;">
+               <children>
+                  <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="59.0" prefWidth="620.0">
+                     <children>
+                        <Label prefWidth="613.0" text="Certificate Authority Log:" textFill="#0a59aa">
+                           <font>
+                              <Font name="Footlight MT Light" size="32.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label alignment="TOP_LEFT" text="________________________________________________________________________________" textFill="#0a59aa" underline="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets top="28.0" />
+                           </StackPane.margin>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <ScrollPane layoutX="-1.0" layoutY="-3.0" prefHeight="594.0" prefWidth="649.0" stylesheets="@../css/ScrollPane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <content>
+                        <VBox fillWidth="false" maxHeight="5000.0" minHeight="-Infinity" prefHeight="5000.0" prefWidth="656.0" spacing="10" style="-fx-background-color: white;">
+                           <children>
+                              <Label fx:id="logger">
+                                 <VBox.margin>
+                                    <Insets left="12.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="info" layoutX="20.0" layoutY="75.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </content>
+                  <graphic>
+            <Label fx:id="log" graphicTextGap="0.0" minHeight="35.0" minWidth="150.0" prefHeight="35.0" prefWidth="151.0" style="-fx-rotate: 90;" text="Logger" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+         </graphic>
+      </Tab>
+      <Tab fx:id="transferData" closable="false">
+         <content>
+            <AnchorPane>
+            <style>-fx-background-color: white;</style>
+               <children>
+                          <TableView fx:id="tableView" layoutX="8.0" layoutY="109.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="629.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #0a59aa; -fx-border-radius: 0; -fx-border-width: 0 0 1 0;" stylesheets="@../css/TableView.css" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                        <TableColumn fx:id="SN" prefWidth="125.0" text="SN" />
+                            <TableColumn fx:id="emailAddress" prefWidth="150.0" text="Email Address" />
+                            <TableColumn fx:id="startDate" prefWidth="122.0" text="Start Date" />
+                        <TableColumn fx:id="expiredDate" prefWidth="115.0" text="Expired Date" />
+                            <TableColumn fx:id="status" prefWidth="126.0" text="Status" />
+                            
+                          </columns>
+                        </TableView>
+                  <HBox layoutX="6.0" layoutY="480.0" prefHeight="45.0" prefWidth="628.0" style="-fx-background-color: #d9dee4;;" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="420.0">
+                     <children>
+                        <Label text="Tips:" textFill="#0a59aa">
+                           <font>
+                              <Font name="Andalus" size="22.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="4.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="you can see the trusted clients here and the status for each one of them." textFill="#321111">
+                           <font>
+                              <Font name="Bell MT" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="3.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </content>
+         <graphic>
+            <Label fx:id="patentsData" minHeight="35.0" minWidth="150.0" prefHeight="35.0" prefWidth="146.0" style="-fx-rotate: 90;" text="Status" textFill="WHITE">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="Cambria" size="22.0" />
+               </font>
+            </Label>
+         </graphic>
+      </Tab>
+   </tabs>
+</TabPane>
